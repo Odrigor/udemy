@@ -1,33 +1,45 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ArrayMap from './ArrayMap'
+import LeeJson from './LeeJson'
 
-
-function Hello(props) {
-    return <h2>{props.title}</h2>
-}
-
-class Text extends Component {
+class ComponenteA extends Component {
   render() { 
     return ( 
       <div>
-        <p>{this.props.txt}</p>
-        <p>{this.props.Numb}</p>
+        soy el componente A
       </div>
      );
   }
 }
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Hello title="Run motherFucker"/>
-      </header>
-      <Text txt="esto esta mal xd" Numb='8'/>
-    </div>
-  );
+class ComponenteB extends Component {
+  render() { 
+    return ( 
+      <div>
+        soy el componente B
+        <ArrayMap/>
+      </div>
+     );
+  }
 }
+
+
+class App extends Component {
+  constructor(){
+    super()
+    this.state = {mostrarA: false}
+  }
+  render() { 
+    return ( 
+      <div>
+        Conditional Rendering
+        {this.state.mostrarA ? <ComponenteA/> : <ComponenteB/>}
+
+        <LeeJson></LeeJson>
+      </div>
+    );
+  }
+}
+ 
 
 export default App;
