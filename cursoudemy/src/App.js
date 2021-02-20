@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ArrayMap from './ArrayMap'
 import LeeJson from './LeeJson'
+import EventOnClick from './EventOnClick'
+import Froms from './Froms'
 
 class ComponenteA extends Component {
   render() { 
@@ -17,7 +19,6 @@ class ComponenteB extends Component {
     return ( 
       <div>
         soy el componente B
-        <ArrayMap/>
       </div>
      );
   }
@@ -35,7 +36,10 @@ class App extends Component {
         Conditional Rendering
         {this.state.mostrarA ? <ComponenteA/> : <ComponenteB/>}
 
-        <LeeJson></LeeJson>
+        <ArrayMap/>
+        <LeeJson/>
+        <EventOnClick/>
+        <Froms/>
       </div>
     );
   }
